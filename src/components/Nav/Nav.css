@@ -1,0 +1,45 @@
+nav{
+    display: flex;
+    justify-content: space-between;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+.nav-social{
+    display: flex;
+    gap: 10px;
+}
+
+.nav-menu{
+    list-style: none;
+    display: flex;
+    gap: 10px;
+}
+
+.nav-button{
+    display: none;
+}
+
+.nav-item-button{
+    padding: 10px 20px;
+    outline: none;
+    border: none;
+    border-radius: 20px;
+    background-color: black;
+    color: white;
+    margin-top: -14px;
+
+}
+
+
+@media screen and (max-width:768px) {
+    .nav-button{
+        display: inline;
+    }
+
+    .nav-menu{
+        display: block;
+        left: -100%;
+        position: fixed;
+    }
+}

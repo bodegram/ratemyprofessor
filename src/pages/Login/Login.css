@@ -1,0 +1,90 @@
+.login{
+    display: flex;
+    justify-content: center;
+}
+.login-card{
+   border: 1px solid black;
+   width: 600px;
+   padding: 50px;
+   height: 90vh;
+   margin-top: 25px;
+}
+
+.input-field{
+    margin-bottom: 10px;
+}
+
+.form-control{
+    outline: none;
+    border: 1px solid gray;
+    padding: 20px;
+    border-radius: 2px;
+    width: 100%;
+}
+
+label{
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.login-btn{
+    width: 100%;
+    padding: 20px;
+    background-color: black;
+    color: white;
+    border: 1px solid black;
+    font-size: 14px;
+    cursor: pointer;
+    border-radius: 30px;
+    font-weight: bold;
+}
+
+.forgot-password{
+    display: flex;
+    justify-content: center;
+    text-decoration: none;
+    font-weight: bold;
+    color: rgb(65, 65, 194);
+}
+
+.login-text{
+    font-size: small;
+    text-align: center;
+    margin-top: 6px;
+}
+
+.login-header h1{
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.login-top-btn{
+    display: flex;
+    justify-content: center;
+}
+
+.login-top-button{
+    padding: 20px;
+    border-radius: 30px;
+    outline: none;
+    border: 1px solid gray;
+    width: 100%;
+    cursor: pointer;
+    background-color: white;
+    margin-bottom: 10px;
+}
+
+.login-top{
+    margin-bottom: 25px;
+}
+
+.login-top-text{
+    justify-content: center;
+    display: flex;
+}
+
+.login-line{
+    height: 10px;
+    background-color: black;
+}

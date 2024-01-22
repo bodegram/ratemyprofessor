@@ -23,12 +23,29 @@ nav{
 .nav-item-button{
     padding: 10px 20px;
     outline: none;
-    border: none;
+    border: 1px solid black;
     border-radius: 20px;
     background-color: black;
     color: white;
     margin-top: -14px;
 
+}
+
+.nav-item-button:hover{
+    background-color: white;
+    border: 1px solid black;
+    color: black;
+}
+
+.nav-log-in{
+   
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+}
+
+.nav-log-in:hover{
+    border-bottom: 2px solid black;
 }
 
 

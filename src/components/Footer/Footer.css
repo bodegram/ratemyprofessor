@@ -8,12 +8,12 @@ footer{
 .footer-bottom{
     display: flex;
     justify-content: space-between;
+    font-size: 14px;
 }
 
 .footer-social{
     display: flex;
-    gap: 10px
-    ;
+    gap: 10px;
 }
 
 .footer-top{
@@ -28,10 +28,22 @@ footer{
     margin-bottom: 15px;
 }
 
-.footer-item-menu div{
+.footer-link{
   margin-bottom: 5px;
+  font-size: 14px;
+  text-decoration: none;
+  color: white;
 }
 
 .footer-item-header h3{
     margin-bottom: 7px;
+}
+
+@media screen and (max-width:768px) {
+    .footer-top{
+        display: block;
+    }
+    .footer-item{
+        margin-bottom: 50px;
+    }
 }

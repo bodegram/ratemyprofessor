@@ -1,0 +1,72 @@
+.hero{
+    padding-top: 100px;
+    padding-bottom: 100px;
+    display: flex;
+    justify-content: center;
+    background-image: url('../../assets/images/grad.avif');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.hero-image{
+    margin-bottom: 25px;
+}
+
+.hero-header-text{
+    font-weight: 400;
+    font-size: 24px;
+    margin-bottom: 25px;
+    text-align: center;
+    color: white;
+}
+
+.hero-form-control{
+    outline: none;
+    border: 1px solid white;
+    padding: 20px;
+    border-radius: 30px;
+    width: 400px;
+    padding-left: 44px;
+}
+
+.hero-img{
+  width: 400px;
+  margin: auto;
+  
+}
+
+.hero-footer-text{
+    text-align: center;
+    font-weight: bold;
+    margin-top: 45px;
+    color: white;
+}
+
+.hero-icon{
+    position: absolute;
+    margin-top: 17px;
+    margin-left: 12px;
+}
+
+.search-result{
+    background-color: ghostwhite;
+    border-radius: 5px;
+    height: 250px;
+    z-index: 999;
+    position: absolute;
+    width: 400px;
+    padding: 10px;
+}
+
+@media screen and (max-width:768px) {
+    .hero-form-control{
+        width: 100%;
+    }
+
+    .hero-img{
+        width: 100%;
+    }
+    .search-result{
+        width: 100%;
+    }
+}

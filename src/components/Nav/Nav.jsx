@@ -1,24 +1,25 @@
 import React from 'react'
 import './Nav.css'
-
+import { FaFacebook, FaTwitter, FaInstagram } from 'react-icons/fa6'
+import { Link } from 'react-router-dom'
 
 export default function Nav() {
   return (
     <nav className='container'>
         <div className="nav-social">
             <div className="nav-social-item">
-                <span>f</span>
+                <span><FaFacebook size={24}/></span>
             </div>
             <div className="nav-social-item">
-                <span>i</span>
+                <span><FaInstagram size={24}/></span>
             </div>
             <div className="nav-social-item">
-                <span>t</span>
+                <span><FaTwitter size={24}/></span>
             </div>
         </div>
         <ul className="nav-menu">
             <li className="nav-item">
-               <div>log in</div>
+               <Link className='nav-log-in' to='/login'>Log in</Link>
             </li>
             <li className="nav-item">
             <button className='nav-item-button'>Sign up</button>

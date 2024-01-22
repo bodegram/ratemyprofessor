@@ -23,12 +23,12 @@ export default function Login() {
         </div>
         <form action="">
           <div className="input-field">
-            <label htmlFor="">Email</label>
+            <label htmlFor="" className="login-label">Email</label>
             <br />
             <input type="email" name="" className="form-control" id="" />
           </div>
           <div className="input-field">
-            <label htmlFor="">Password</label>
+            <label htmlFor="" className="login-label">Password</label>
             <br />
             <input type="password" name="" className="form-control" id="" />
           </div>

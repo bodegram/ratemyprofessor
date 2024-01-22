@@ -39,6 +39,10 @@ footer{
     margin-bottom: 7px;
 }
 
+.footer-toggle-icon{
+    cursor: pointer;
+}
+
 @media screen and (max-width:768px) {
     .footer-top{
         display: block;

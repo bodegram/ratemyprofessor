@@ -18,7 +18,7 @@ export default function Footer() {
   return (
     <footer className="container">
       <div className="footer-toggle">
-        <div onClick={toggleFooter}>
+        <div onClick={toggleFooter} className="footer-toggle-icon">
           {showFooter ? <FaAngleUp/> :<FaAngleDown />}
         </div>
       </div>

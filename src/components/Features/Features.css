@@ -8,17 +8,17 @@
 
 .feature-text{
     font-weight: bolder;
-    font-size: 24px;
+    font-size: 22px;
     text-align: center;
 }
 
 .feature-img{
-    width: 300px;
+    width: 280px;
     margin-bottom: 20px;
 }
 
 .feature-img-three{
-    width: 320px;
+    width: 300px;
     margin-bottom: 72px;
 }
 
@@ -51,14 +51,25 @@
     .features{
         display: block;
     }
+    .feature-image{
+        display: flex;
+        justify-content: center;
+    }
 
     .feature-img{
-        width: 100%;
+        width: 50%;
+        
     }
     .feature-img-three{
-        width: 100%;
+        width: 50%;
     }
     .feature{
-        margin-bottom: 40px;
+        margin-bottom: 50px;
+    }
+    .feature-text{
+        font-size: 20px;
+    }
+    .features-header h2{
+        margin-bottom: 30px;
     }
 }

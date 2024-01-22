@@ -1,9 +1,14 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './Nav.css'
-import { FaFacebook, FaTwitter, FaInstagram, FaBars } from 'react-icons/fa6'
+import { FaFacebook, FaTwitter, FaInstagram, FaBars, } from 'react-icons/fa6'
 import { Link } from 'react-router-dom'
+import {FaTimes } from 'react-icons/fa'
 
 export default function Nav() {
+    const [showMenu, setShowMenu] = useState(false)
+    const toggleNav = () =>{
+        setShowMenu(!showMenu)
+    }
   return (
     <nav className='container'>
         <div className="nav-social">
@@ -17,7 +22,7 @@ export default function Nav() {
                 <span><FaTwitter size={24}/></span>
             </div>
         </div>
-        <ul className="nav-menu">
+        <ul className={showMenu ? 'nav-menu' : 'nav-menu nav-hide'}>
             <li className="nav-item">
                <Link className='nav-log-in' to='/login'>Log in</Link>
             </li>
@@ -26,7 +31,7 @@ export default function Nav() {
             </li>
         </ul>
         <div className="nav-button">
-            <span><FaBars size={24}/></span>
+            <span onClick={toggleNav}>{showMenu ? <FaTimes size={24}/>: <FaBars size={24}/>}</span>
         </div>
     </nav>
   )

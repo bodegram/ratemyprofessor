@@ -56,7 +56,20 @@ nav{
 
     .nav-menu{
         display: block;
-        left: -100%;
+        left: 0;
         position: fixed;
+        background-color: white;
+        top: 0;
+        height: 100vh;
+        z-index: 999;
+        width: 50%;
+        padding-top: 20px;
+        transition: 5ms ease-out;
+    }
+    .nav-item{
+        margin-bottom: 20px;
+    }
+    .nav-hide{
+        left: -100%;
     }
 }

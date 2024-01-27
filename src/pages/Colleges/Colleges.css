@@ -1,0 +1,51 @@
+.colleges-header{
+    padding-top: 80px;
+    padding-bottom: 30px;
+    background-color: ghostwhite;
+ 
+}
+
+.colleges-header-top-subtext{
+    font-weight: bold;
+    font-size: 24px;
+    margin-bottom: 3px;
+}
+
+.colleges-header-link{
+    color: black;
+    font-weight: bold;
+}
+
+.colleges-header-buttons{
+    display: flex;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+
+.colleges-header-btn-one{
+    background-color: blue;
+    color: white;
+    padding: 15px 25px;
+    border: 1px solid blue;
+    outline: none;
+    border-radius: 30px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.colleges-header-btn-two{
+    background-color: white;
+    color: blue;
+    padding: 15px 25px;
+    border: 1px solid blue;
+    outline: none;
+    border-radius: 30px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.colleges-header-btn-two:hover{
+    background-color: blue;
+    color: white;
+}

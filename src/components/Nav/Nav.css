@@ -3,6 +3,10 @@ nav{
     justify-content: space-between;
     padding-top: 15px;
     padding-bottom: 15px;
+    position: fixed;
+    z-index: 999;
+    width: 100%;
+    background-color: white;
 }
 
 .nav-social{
@@ -28,6 +32,7 @@ nav{
     background-color: black;
     color: white;
     margin-top: -14px;
+    text-decoration: none;
 
 }
 
@@ -67,7 +72,7 @@ nav{
         transition: 5ms ease-out;
     }
     .nav-item{
-        margin-bottom: 20px;
+        margin-bottom: 25px;
     }
     .nav-hide{
         left: -100%;

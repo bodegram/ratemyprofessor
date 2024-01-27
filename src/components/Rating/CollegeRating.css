@@ -1,0 +1,35 @@
+.college-rating{
+    display: flex;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    gap: 100px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+.college-rate-text{
+    font-size: 50px;
+    font-weight: bolder;
+}
+
+.college-rating-list{
+    display: flex;
+    flex-wrap: wrap;
+    width: 65%;
+    gap: 30px;
+}
+
+@media screen and (max-width:768px) {
+    .college-rating-list{
+        display: block;
+        width: 70%;
+        margin: auto;
+    }
+    .college-rating{
+        display: block;
+    }
+    .college-rate{
+        text-align: center;
+        margin-bottom: 40px;
+    }
+}

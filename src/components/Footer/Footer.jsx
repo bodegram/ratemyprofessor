@@ -101,17 +101,17 @@ export default function Footer() {
         <div className="footer-social">
           <div>
             <span>
-              <FaFacebook />
+              <FaFacebook size={22}/>
             </span>
           </div>
           <div>
             <span>
-              <FaInstagram />
+              <FaInstagram size={22} />
             </span>
           </div>
           <div>
             <span>
-              <FaTwitter />
+              <FaTwitter size={22} />
             </span>
           </div>
         </div>

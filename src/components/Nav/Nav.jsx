@@ -4,6 +4,7 @@ import { FaFacebook, FaTwitter, FaInstagram, FaBars, } from 'react-icons/fa6'
 import { Link } from 'react-router-dom'
 import {FaTimes } from 'react-icons/fa'
 
+
 export default function Nav() {
     const [showMenu, setShowMenu] = useState(false)
     const toggleNav = () =>{
@@ -27,8 +28,25 @@ export default function Nav() {
                <Link className='nav-log-in' to='/login'>Log in</Link>
             </li>
             <li className="nav-item">
-            <button className='nav-item-button'>Sign up</button>
+            <Link className='nav-item-button' to='/register'>Sign up</Link>
             </li>
+            {/*
+            <li className="nav-item">
+               <Link className='nav-log-in' to='/login'>Profile</Link>
+            </li>
+            <li className="nav-item">
+               <Link className='nav-log-in' to='/login'>Account Settings</Link>
+            </li>
+            <li className="nav-item">
+               <Link className='nav-log-in' to='/login'>Your Ratings</Link>
+            </li>
+            <li className="nav-item">
+               <Link className='nav-log-in' to='/login'>My Saved Professors </Link>
+            </li>
+            <li className="nav-item">
+               <Link className='nav-log-in' to='/login'>Log out</Link>
+            </li>
+  */}
         </ul>
         <div className="nav-button">
             <span onClick={toggleNav}>{showMenu ? <FaTimes size={24}/>: <FaBars size={24}/>}</span>

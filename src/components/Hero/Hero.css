@@ -49,13 +49,25 @@
 }
 
 .search-result{
-    background-color: ghostwhite;
+    background-color: white;
     border-radius: 5px;
     height: 250px;
     z-index: 999;
     position: absolute;
     width: 400px;
     padding: 10px;
+    overflow-y: scroll;
+}
+
+.search-result-item{
+    border-bottom: 1px solid black;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    cursor: pointer;
+}
+
+.search-result-item:hover{
+    background-color: ghostwhite;
 }
 
 @media screen and (max-width:768px) {

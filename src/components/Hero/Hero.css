@@ -51,7 +51,7 @@
 .search-result{
     background-color: white;
     border-radius: 5px;
-    height: 250px;
+    height: 200px;
     z-index: 999;
     position: absolute;
     width: 400px;
@@ -60,14 +60,17 @@
 }
 
 .search-result-item{
-    border-bottom: 1px solid black;
-    padding-top: 5px;
-    padding-bottom: 5px;
+    background-color: ghostwhite;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 5px;
+    padding-right: 5px;
     cursor: pointer;
+    margin-top: 10px;
 }
 
 .search-result-item:hover{
-    background-color: ghostwhite;
+    margin-top: 10px;
 }
 
 @media screen and (max-width:768px) {

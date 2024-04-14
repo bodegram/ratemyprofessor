@@ -1,80 +1,73 @@
-nav{
-    display: flex;
-    justify-content: space-between;
-    padding-top: 15px;
-    padding-bottom: 15px;
-    position: fixed;
-    z-index: 999;
-    width: 100%;
-    background-color: white;
+nav {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  z-index: 999;
+  width: 100%;
+  background-color: white;
 }
 
-.nav-social{
-    display: flex;
-    gap: 10px;
+.nav-social {
+  display: flex;
+  gap: 10px;
 }
 
-.nav-menu{
-    list-style: none;
-    display: flex;
-    gap: 10px;
+.nav-menu {
+  display: block;
+  left: 0;
+  position: absolute;
+  background-color: white;
+  top: 50px;
+  height: 50vh;
+  z-index: 999;
+  width: 100%;
+  padding-top: 20px;
+  transition: 5ms ease-out;
+  list-style: none;
 }
 
-.nav-button{
-    display: none;
+.nav-item {
+    margin-bottom: 25px;
+  }
+
+.nav-item-button {
+  padding: 10px 20px;
+  outline: none;
+  border: 1px solid black;
+  border-radius: 20px;
+  background-color: black;
+  color: white;
+  margin-top: -14px;
+  text-decoration: none;
 }
 
-.nav-item-button{
-    padding: 10px 20px;
-    outline: none;
-    border: 1px solid black;
-    border-radius: 20px;
-    background-color: black;
-    color: white;
-    margin-top: -14px;
-    text-decoration: none;
-
+.nav-item-button:hover {
+  background-color: white;
+  border: 1px solid black;
+  color: black;
 }
 
-.nav-item-button:hover{
-    background-color: white;
-    border: 1px solid black;
-    color: black;
+.nav-log-in {
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
 }
 
-.nav-log-in{
-   
-    text-decoration: none;
-    color: black;
-    font-weight: bold;
+.nav-log-in:hover {
+  border-bottom: 2px solid black;
 }
 
-.nav-log-in:hover{
-    border-bottom: 2px solid black;
+.nav-hide {
+  top: -100%;
 }
 
+.nav-user div{
+  margin-top: 2px;
+  font-weight: bold;
+  font-size: 20px;
+}
 
-@media screen and (max-width:768px) {
-    .nav-button{
-        display: inline;
-    }
+@media screen and (max-width: 768px) {
 
-    .nav-menu{
-        display: block;
-        left: 0;
-        position: fixed;
-        background-color: white;
-        top: 0;
-        height: 100vh;
-        z-index: 999;
-        width: 50%;
-        padding-top: 20px;
-        transition: 5ms ease-out;
-    }
-    .nav-item{
-        margin-bottom: 25px;
-    }
-    .nav-hide{
-        left: -100%;
-    }
 }

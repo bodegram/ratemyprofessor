@@ -3,8 +3,10 @@ import './Features.css'
 import ImgOne from '../../assets/images/b.svg'
 import ImgTwo from '../../assets/images/c.svg'
 import ImgThree from '../../assets/images/d.svg'
+import { useNavigate } from 'react-router-dom'
 
 export default function Features() {
+    const navigate = useNavigate()
   return (
    <>
    <div className="features-header">
@@ -37,7 +39,7 @@ export default function Features() {
         </div>
     </div>
     <div className="features-button">
-        <button>My Ratings</button>
+        <button onClick={()=>navigate('/account/ratings')}>My Ratings</button>
     </div>
    </>
   )

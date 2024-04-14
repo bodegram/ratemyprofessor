@@ -1,6 +1,9 @@
 .rating{
     display: flex;
     gap: 120px;
+    background-color: ghostwhite;
+    padding: 10px;
+    border-radius: 5px;
 }
 
 .rating-icon-text{
@@ -27,5 +30,6 @@
 @media screen and (max-width:768px) {
     .rating{
         margin-bottom: 20px;
+        justify-content: space-between;
     }
 }

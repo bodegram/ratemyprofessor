@@ -1,13 +1,17 @@
 .login{
     display: flex;
     justify-content: center;
+    background-color: black;
+    height: 100vh;
 }
 .login-card{
-   border: 1px solid black;
+   border: 1px solid white;
    width: 600px;
    padding: 50px;
    height: 90vh;
    margin-top: 25px;
+   background-color: white;
+   border-radius: 5px;
 }
 
 .input-field{
@@ -16,7 +20,7 @@
 
 .form-control{
     outline: none;
-    border: 1px solid gray;
+    border: 1px solid gainsboro;
     padding: 20px;
     border-radius: 2px;
     width: 100%;
@@ -91,5 +95,6 @@
     .login-card{
         padding: 15px;
         height: 80vh;
+        margin-top: 50px;
     }
 }

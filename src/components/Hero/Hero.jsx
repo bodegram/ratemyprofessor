@@ -3,13 +3,16 @@ import './Hero.css'
 import HeroImage from '../../assets/images/a.svg'
 import { FaGraduationCap } from 'react-icons/fa6'
 import { useNavigate } from 'react-router-dom'
+import { universities } from '../../_helpers/universities'
 
 export default function Hero() {
   const navigate = useNavigate()
     const [searchResult, setSearchResult] = useState('')
+    const [filterResults, setFilterResults] = useState(universities)
     const handleSubmit = ()=>{
-        navigate('/colleges/1')
+        navigate('/school/1')
     }
+    console.log('result', filterResults);
   return (
     <div className='hero container'>
         <div>
@@ -20,21 +23,24 @@ export default function Hero() {
             <div>
                 <div className='hero-icon'><FaGraduationCap size={20}/></div>
                 <form action="" onSubmit={handleSubmit}>
-                    <input type="text" onChange={(e)=>setSearchResult(e.target.value)} className='hero-form-control' placeholder='Your School' id="" />
+                    <input type="text" onChange={(e)=>{
+                      setSearchResult(e.target.value)
+                      setFilterResults(universities.filter((uni)=> uni.name.includes(searchResult)))
+                    }} className='hero-form-control' placeholder='Your School' id="" />
                 </form>
             </div>
             <div>
                {!searchResult == "" && (
                  <div className="search-result">
                  <div>Search result for "{searchResult}"</div>
-                 <div className='search-result-item'>FUNAAB</div>
-                 <div className='search-result-item'>FUNAAB</div>
-                 <div className='search-result-item'>FUNAAB</div>
-                 <div className='search-result-item'>FUNAAB</div>
-                 <div className='search-result-item'>FUNAAB</div>
-                 <div className='search-result-item'>FUNAAB</div>
-                 <div className='search-result-item'>FUNAAB</div>
-                 <div className='search-result-item'>FUNAAB</div>
+                 {
+                  filterResults.map((item)=>(
+                  <div className='search-result-item'>{item.name}</div>
+                  ))
+        
+                 }
+                
+                 
                
              </div>
                )}

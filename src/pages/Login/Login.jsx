@@ -1,10 +1,47 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
 import "./Login.css";
 import { Link } from "react-router-dom";
 import { FaGoogle } from "react-icons/fa6";
+import { loginAsync, clearLog } from "../../redux/slices/authSlice";
+import { useDispatch, useSelector } from "react-redux";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import { useNavigate } from "react-router-dom";
+
 
 
 export default function Login() {
+  const [email, setEmail] = useState('')
+  const [password, setPassword] = useState('')
+  const {isAuthenticated, token, error, errorMessage, loading} = useSelector(state=>state.auth)
+  //console.log('auth', isAuthenticated, token)
+  
+  const dispatch = useDispatch()
+  const navigate = useNavigate()
+
+  useEffect(()=>{
+    if(errorMessage && error){
+      toast.error(errorMessage)
+      dispatch(clearLog())
+   }
+  }, [error, errorMessage])
+
+  useEffect(()=>{
+    if(token && isAuthenticated){
+      toast.success('Logged in successfully')
+      navigate('/')
+     
+    }
+  }, [token, isAuthenticated])
+
+  const handleSubmit = (e) =>{
+    e.preventDefault();
+    if(email.length !== 0 && password.length !== 0){
+      dispatch(loginAsync({email, password}))
+      
+    }
+
+  }
   return (
     <div className="login container">
       <div className="login-card">
@@ -21,16 +58,16 @@ export default function Login() {
             <div className="login-line"></div>
           </div>
         </div>
-        <form action="">
+        <form action="" onSubmit={handleSubmit}>
           <div className="input-field">
             <label htmlFor="" className="login-label">Email</label>
             <br />
-            <input type="email" name="" className="form-control" id="" />
+            <input type="email" name="" onChange={(e)=>setEmail(e.target.value)} className="form-control" id="" />
           </div>
           <div className="input-field">
             <label htmlFor="" className="login-label">Password</label>
             <br />
-            <input type="password" name="" className="form-control" id="" />
+            <input type="password" name="" onChange={(e)=>setPassword(e.target.value)} className="form-control" id="" />
           </div>
           <div className="input-field">
             <Link className="forgot-password">Forgot Password?</Link>
@@ -48,6 +85,7 @@ export default function Login() {
           </div>
         </form>
       </div>
+      <ToastContainer />
     </div>
   );
 }

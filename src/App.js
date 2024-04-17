@@ -10,6 +10,7 @@ import Profile from './pages/Profile/Profile';
 
 
 function App() {
+  console.log('url', window.location.pathname)
   return (
    <>
      <BrowserRouter>

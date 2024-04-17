@@ -1,11 +1,18 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./Profile.css";
 import Nav from "../../components/Nav/Nav";
 import Footer from "../../components/Footer/Footer";
 import AccountNav from "../../components/AccountNav/AccountNav";
 import { FaPencil } from "react-icons/fa6";
+import { getProfileAsync } from "../../redux/slices/profileSlice";
+import { useDispatch, useSelector } from "react-redux";
 
 export default function Profile() {
+    const dispatch = useDispatch()
+    const {data} = useSelector(state=>state.profile)
+    useEffect(()=>{
+       dispatch(getProfileAsync())
+    }, [])
   return (
     <>
       <Nav />
@@ -21,7 +28,7 @@ export default function Profile() {
                    First name
                 </div>
                 <div className="profile-text">
-                    Samuel
+                    {data?.first_name}
                 </div>
             </div>
             <div className="profile-item">
@@ -29,7 +36,7 @@ export default function Profile() {
                    Last name
                 </div>
                 <div className="profile-text">
-                    Samuel
+                    {data?.last_name}
                 </div>
             </div>
             <div className="profile-item">
@@ -37,7 +44,7 @@ export default function Profile() {
                    School
                 </div>
                 <div className="profile-text">
-                    Samuel
+                    {data?.school}
                 </div>
             </div>
             <div className="profile-item">
@@ -46,7 +53,7 @@ export default function Profile() {
 
                 </div>
                 <div className="profile-text">
-                    Samuel
+                    {data?.field_of_study}
                 </div>
             </div>
             <div className="profile-item">
@@ -55,7 +62,7 @@ export default function Profile() {
 
                 </div>
                 <div className="profile-text">
-                    Samuel
+                    {data?.year_of_graduation}
                 </div>
             </div>
          </div>

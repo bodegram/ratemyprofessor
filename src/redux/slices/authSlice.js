@@ -23,6 +23,15 @@ export const loginAsync = createAsyncThunk(
   }
 );
 
+export const registerAsync = createAsyncThunk('auth/registerAsync', async(payload, {dispatch, rejectWithValue})=>{
+  try{
+     dispatch(registerRequest())
+  }
+  catch(error){
+    return rejectWithValue("An error occurred");
+  }
+})
+
 const initialState = {
   isAuthenticated: false,
   loading: false,
@@ -31,6 +40,8 @@ const initialState = {
   token: null,
   email: null,
   username: null,
+  isRegistered: false
+
   
 };
 
@@ -63,8 +74,29 @@ export const authSlice = createSlice({
       state.error = false
       state.errorMessage = null
       state.loading = false
+      state.isRegistered = false
+    },
+    registerRequest: (state)=>{
+      state.loading = true
+    },
+    registerFail: (state, action)=>{
+      state.error = true
+      state.errorMessage = action.payload
+      state.loading = false
+    },
+    registerSuccess: (state)=>{
+
     }
   },
 });
 
-export const {loginRequest, loginSuccess,loginFail, clearLog, logout} = authSlice.actions
+export const {
+  loginRequest, 
+  loginSuccess,
+  loginFail, 
+  clearLog, 
+  logout, 
+  registerRequest, 
+  registerFail, 
+  registerSuccess
+} = authSlice.actions

@@ -28,8 +28,10 @@ export default function Login() {
 
   useEffect(()=>{
     if(token && isAuthenticated){
-      toast.success('Logged in successfully')
+      localStorage.setItem('token', token)
+      //toast.success('Logged in successfully')
       navigate('/')
+
      
     }
   }, [token, isAuthenticated])

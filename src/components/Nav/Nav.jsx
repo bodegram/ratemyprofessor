@@ -44,14 +44,17 @@ export default function Nav() {
             ):
             (
             <>
+             <li className="nav-item">
+               <Link className='nav-log-in' to='/'>Home</Link>
+            </li>
             <li className="nav-item">
-               <Link className='nav-log-in' to='/login'>Profile</Link>
+               <Link className='nav-log-in' to='/account/profile'>Profile</Link>
             </li>
             <li className="nav-item">
                <Link className='nav-log-in' to='/login'>Account Settings</Link>
             </li>
             <li className="nav-item">
-               <Link className='nav-log-in' to='/login'>Your Ratings</Link>
+               <Link className='nav-log-in' to='/account/ratings'>Your Ratings</Link>
             </li>
             <li className="nav-item">
                <Link className='nav-log-in' to='/login'>My Saved Professors </Link>

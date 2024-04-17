@@ -4,15 +4,17 @@ import HeroImage from '../../assets/images/a.svg'
 import { FaGraduationCap } from 'react-icons/fa6'
 import { useNavigate } from 'react-router-dom'
 import { universities } from '../../_helpers/universities'
+import { useDispatch } from 'react-redux'
+import { getCollegeAsync } from '../../redux/slices/collegeSlice'
 
 export default function Hero() {
   const navigate = useNavigate()
+  const dispatch = useDispatch()
     const [searchResult, setSearchResult] = useState('')
     const [filterResults, setFilterResults] = useState(universities)
-    const handleSubmit = ()=>{
-        navigate('/school/1')
+    const handleSubmit = (e)=>{
+        e.preventDefault()
     }
-    console.log('result', filterResults);
   return (
     <div className='hero container'>
         <div>
@@ -35,9 +37,16 @@ export default function Hero() {
                  <div>Search result for "{searchResult}"</div>
                  {
                   filterResults.map((item)=>(
-                  <div className='search-result-item'>{item.name}</div>
+                  <div className='search-result-item' onClick={()=>{
+                    dispatch(getCollegeAsync(item.name))
+                   navigate('/school/1')
+                  }}>{item.name}</div>
                   ))
-        
+                 }
+                 {
+                  filterResults.length === 0 &&(
+                    <div style={{marginTop:'15px'}}>No result found</div>
+                  )
                  }
                 
                  

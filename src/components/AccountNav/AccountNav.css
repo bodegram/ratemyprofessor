@@ -23,7 +23,7 @@
 }
 
 .active{
-    border-bottom: 1px solid black;
+    color: red;
 }
 
 .account{

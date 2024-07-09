@@ -13,8 +13,8 @@ import { useNavigate } from "react-router-dom";
 export default function Login() {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
-  const {isAuthenticated, token, error, errorMessage, loading} = useSelector(state=>state.auth)
-  //console.log('auth', isAuthenticated, token)
+  const {isAuthenticated, data, error, errorMessage, loading} = useSelector(state=>state.auth)
+  
   
   const dispatch = useDispatch()
   const navigate = useNavigate()
@@ -27,14 +27,14 @@ export default function Login() {
   }, [error, errorMessage])
 
   useEffect(()=>{
-    if(token && isAuthenticated){
-      localStorage.setItem('token', token)
+    if(data && isAuthenticated){
+      localStorage.setItem('token', data.accessToken)
       //toast.success('Logged in successfully')
       navigate('/')
 
      
     }
-  }, [token, isAuthenticated])
+  }, [data, isAuthenticated])
 
   const handleSubmit = (e) =>{
     e.preventDefault();

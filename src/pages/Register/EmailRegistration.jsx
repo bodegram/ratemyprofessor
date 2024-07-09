@@ -1,25 +1,35 @@
 import React, { useState } from "react";
 import "./EmailRegistration.css";
 import { Link } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { registerAsync } from "../../redux/slices/authSlice";
 
-export default function EmailRegistration({ emailValue, onChange }) {
-  const [email, setEmail] = useState(emailValue);
+export default function EmailRegistration({
+  emailValue,
+  onChange,
+  usernameValue,
+}) {
+  const [email, setEmail] = useState('');
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('')
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    onChange(email)
-
+    onChange({ email, username });
   };
-  console.log('emailValue', email);
+  //console.log("emailValue", email);
   return (
     <div className="email-register-card">
       <div className="email-register-card-header">
         <h3>
           <span style={{ fontWeight: "bolder" }}>Student</span>{" "}
-          <span style={{ fontWeight: 'bolder', color:'red' }}>Sign Up</span>
+          <span style={{ fontWeight: "bolder", color: "red" }}>Sign Up</span>
         </h3>
         <p>
           Are you a professor?
-          <Link style={{ textDecoration: "none", color: "blue",marginLeft:'5px' }}>
+          <Link
+            style={{ textDecoration: "none", color: "blue", marginLeft: "5px" }}
+          >
             Sign up here
           </Link>
         </p>
@@ -33,7 +43,7 @@ export default function EmailRegistration({ emailValue, onChange }) {
             <div>Or sign up with email</div>
           </div>
           <div className="email-form">
-            <form action="" onSubmit={handleSubmit}> 
+            <form action="" onSubmit={handleSubmit}>
               <label htmlFor="Email">Email</label>
               <input
                 type="text"
@@ -41,6 +51,28 @@ export default function EmailRegistration({ emailValue, onChange }) {
                 onChange={(e) => setEmail(e.target.value)}
                 value={email}
               />
+              {email !== "" && (
+                <>
+                  <label htmlFor="Email">Username</label>
+                  <input
+                    type="text"
+                    className="email-form-control"
+                    onChange={(e) => setUsername(e.target.value)}
+                    value={username}
+                  />
+                </>
+              )}
+                            {email !== "" && (
+                <>
+                  <label htmlFor="Email">Password</label>
+                  <input
+                    type="password"
+                    className="email-form-control"
+                    onChange={(e) => setPassword(e.target.value)}
+                    value={username}
+                  />
+                </>
+              )}
               <button type="submit" className="email-btn">
                 Continue
               </button>

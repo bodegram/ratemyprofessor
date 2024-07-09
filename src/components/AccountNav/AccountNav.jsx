@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 export default function AccountNav() {
   return (
-    <div className="account">
+    <div className="container">
       <div>
         <ul className="account-nav-menu">
           <li className="account-nav-item">

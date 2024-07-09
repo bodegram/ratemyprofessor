@@ -2,12 +2,12 @@ import React, { useEffect, useState } from "react";
 import "./PasswordRegistration.css";
 import { FaArrowLeft, FaEye, FaEyeSlash } from "react-icons/fa";
 
-export default function PasswordRegistration({ goBack, values }) {
+export default function PasswordRegistration({ goBack, values, onChange, onSubmit }) {
   const [password, setPassword] = useState("");
   const [cpassword, setCpassword] = useState("");
   const [errorMessage, setErrorMessage] = useState(false);
 
-  console.log("p", password, "cp", cpassword);
+  //console.log("p", password, "cp", cpassword);
   useEffect(() => {
     if (password !== "" && cpassword !== "") {
       if (password !== cpassword) {
@@ -19,7 +19,12 @@ export default function PasswordRegistration({ goBack, values }) {
       setErrorMessage(false);
     }
   }, [password, cpassword]);
-  const onSubmit = () => {};
+
+  const handleSubmit = (e)=>{
+    e.preventDefault()
+    onChange({password})
+    console.log('password', onChange({password}));
+  }
   return (
     <div className="password-reg">
       <div className="password-reg-header">
@@ -32,7 +37,7 @@ export default function PasswordRegistration({ goBack, values }) {
       </div>
       <div className="password-reg-body">
         <div className="password-reg-form">
-          <form action="" onSubmit={onSubmit}>
+          <form action="" onSubmit={handleSubmit}>
             <div style={{ marginBottom: "15px" }}>
               <label htmlFor="">Password</label>
               <input
@@ -58,7 +63,11 @@ export default function PasswordRegistration({ goBack, values }) {
                 onChange={(e) => setCpassword(e.target.value)}
               />
             </div>
-            <button type="submit" className="password-reg-button">
+            <button
+              type="submit"
+              disabled={cpassword !== password ? true : false}
+              className="password-reg-button"
+            >
               Continue
             </button>
           </form>

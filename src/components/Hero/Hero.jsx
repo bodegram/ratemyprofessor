@@ -39,7 +39,7 @@ export default function Hero() {
                   filterResults.map((item)=>(
                   <div className='search-result-item' onClick={()=>{
                     dispatch(getCollegeAsync(item.name))
-                   navigate('/school/1')
+                   navigate('/school')
                   }}>{item.name}</div>
                   ))
                  }

@@ -4,13 +4,15 @@ import ImgOne from '../../assets/images/b.svg'
 import ImgTwo from '../../assets/images/c.svg'
 import ImgThree from '../../assets/images/d.svg'
 import { useNavigate } from 'react-router-dom'
+import { useSelector } from 'react-redux'
 
 export default function Features() {
+    const {isAuthenticated, username} = useSelector(state=>state.auth)
     const navigate = useNavigate()
   return (
    <>
    <div className="features-header">
-     <h2>Welcome back!</h2>
+     <h2>Welcome back {isAuthenticated && username}!</h2>
    </div>
     <div className='features container'>
         <div className="feature">

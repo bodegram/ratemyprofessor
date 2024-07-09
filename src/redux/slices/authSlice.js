@@ -5,19 +5,17 @@ export const loginAsync = createAsyncThunk(
   async (payload, { dispatch, rejectWithValue }) => {
     try {
         dispatch(loginRequest())
-        const {data} = await api.post('/auth', payload)
-        if(data.status === 200){
-          //console.log('user logged in');
-           dispatch(loginSuccess({token:data.data.accessToken, email:data.data.email, username: data.data.username}))          
-        }
-        else{
-          //console.log('error logging in', data.message);
-            dispatch(loginFail(data.message))
-        }
+        const {data} = await api.post('/user/login', payload)
+        console.log('data', data);
+       
+        dispatch(loginSuccess(data))          
+    
 
        
 
     } catch (error) {
+      console.log(error);
+      //dispatch(loginFail())
       return rejectWithValue("An error occurred");
     }
   }
@@ -26,6 +24,9 @@ export const loginAsync = createAsyncThunk(
 export const registerAsync = createAsyncThunk('auth/registerAsync', async(payload, {dispatch, rejectWithValue})=>{
   try{
      dispatch(registerRequest())
+     console.log('payload', payload);
+     const {data} = await api.post('/register', payload)
+     console.log('reg-data', data);
   }
   catch(error){
     return rejectWithValue("An error occurred");
@@ -37,9 +38,7 @@ const initialState = {
   loading: false,
   error: false,
   errorMessage: null,
-  token: null,
-  email: null,
-  username: null,
+  data: null,
   isRegistered: false
 
   
@@ -55,9 +54,8 @@ export const authSlice = createSlice({
     loginSuccess: (state, action) => {
       state.isAuthenticated = true
       state.loading = false
-      state.token = action.payload.token
-      state.email = action.payload.email
-      state.username = action.payload.username
+      state.data = action.payload
+     
     },
     loginFail: (state, action)=>{
         state.error = true

@@ -6,12 +6,15 @@ import {FaTimes } from 'react-icons/fa'
 import { useSelector } from 'react-redux'
 import { logout } from '../../redux/slices/authSlice'
 import { useDispatch } from 'react-redux'
+import { useNavigate } from 'react-router-dom'
 
 
 export default function Nav() {
-    const {isAuthenticated, username} = useSelector(state=>state.auth)
+    const {isAuthenticated, data} = useSelector(state=>state.auth)
     const [showMenu, setShowMenu] = useState(false)
     const dispatch = useDispatch()
+    const navigate = useNavigate()
+    console.log('nav-data', data)
     const toggleNav = () =>{
         setShowMenu(!showMenu)
     }
@@ -19,7 +22,7 @@ export default function Nav() {
     <nav className='container'>
         <div className="nav-social">
             <div className='nav-user'>
-                <div>Hey {username ? username: 'Guest'},</div>
+                <div>Hey {isAuthenticated ? data.data.username: 'Guest'},</div>
             </div>
             <div className="nav-social-item">
                 <span><FaFacebook size={24}/></span>
@@ -62,6 +65,8 @@ export default function Nav() {
             <li className="nav-item">
                <div className='nav-log-in' style={{cursor:'pointer'}} onClick={()=>{
                 dispatch(logout())
+                navigate('/')
+                setShowMenu(false)
                }}>Log out</div>
             </li>
             </>
